@@ -14,15 +14,46 @@ public class Estudiantes2023 {
         estudiantes = new ArrayList<>();
         cargarArchivo();
     }
-
     public void adicionar(Estudiante estudiante) {
-        //Introduce c�digo
+		// TODO Auto-generated method stub
     	estudiantes.add(estudiante);
+	}
+    public void añadir() {
+        Scanner scanner = new Scanner(System.in);
+        	System.out.println("Ingrese nombre del estudiante: ");
+        	String nombre = scanner.nextLine();
+        	
+        	System.out.println("Ingrese apellido del estudiante: ");
+        	String apellido = scanner.nextLine();
+        	
+        	System.out.println("Ingrese ciclo del estudiante: ");
+        	int ciclo = scanner.nextInt();
+        	
+        	System.out.println("Ingrese pension del estudiante: ");
+        	double pension = scanner.nextDouble();
+        
+        	Estudiante es = new Estudiante(0,nombre+" "+apellido, ciclo, pension);
+        	adicionar(es);
+        	
+        	System.out.println("Se añadio con exito!");
+    
+    		listarEstudiantes();
     }
 
-    public void eliminar(Estudiante estudiante) {
-        //Introduce c�digo
-    }
+      public void eliminar() {
+    	Scanner scanner = new Scanner(System.in);
+
+    	System.out.println("Ingrese el codigo del estudiante a elimminar: ");
+        	  int codigoaEliminar = scanner.nextInt();
+        	  
+        	  for (Estudiante estudiante : estudiantes) {
+				if(estudiante.getCodigo()==codigoaEliminar) {
+					estudiantes.remove(estudiante);
+					break;
+				}
+			}
+    	listarEstudiantes();
+	}
 
     public Estudiante obtener(int pos) {
 	//Introduce c�digo
