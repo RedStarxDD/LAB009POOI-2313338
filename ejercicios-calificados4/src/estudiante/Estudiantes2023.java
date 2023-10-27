@@ -1,6 +1,9 @@
 package estudiante;
 
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import javax.swing.*;
 import java.io.*;
 
@@ -14,6 +17,7 @@ public class Estudiantes2023 {
 
     public void adicionar(Estudiante estudiante) {
         //Introduce c�digo
+    	estudiantes.add(estudiante);
     }
 
     public void eliminar(Estudiante estudiante) {
@@ -38,10 +42,29 @@ public class Estudiantes2023 {
     public void listarEstudiantes(){
         for (Estudiante estudiante : estudiantes) {
         	System.out.println("Codigo: " + estudiante.getCodigo() +
-        			", Nombre: " + estudiante.getNombre() + "Ciclo: " + estudiante.getCiclo() +
-        			"Pension: " + estudiante.getPension());
+        			", Nombre: " + estudiante.getNombre() + ", Ciclo: " + estudiante.getCiclo() +
+        			", Pension: " + estudiante.getPension());
         }
     }
+    
+    public void ordenarEstudiantesPorApellido() { 
+ 	   List<Estudiante> estudiantesOrdenados=estudiantes.stream().sorted(Comparator.comparing(Estudiante::getNombre)).collect(Collectors.toList());
+ 	   
+ 	   for (Estudiante estudiante : estudiantesOrdenados) {
+ 		System.out.println(estudiante);
+ 	}
+
+     }
+    
+    public void ordenarEstudiantesPorPension() { 
+ 	   List<Estudiante> estudiantesOrdenados=estudiantes.stream().sorted(Comparator.comparingDouble(Estudiante::getPension)).collect(Collectors.toList());
+ 	   
+ 	   for (Estudiante estudiante : estudiantesOrdenados) {
+ 		System.out.println(estudiante);
+ 	}
+
+     }
+    
 
     // M�todos para manipular el archivo de texto
     private void readFromInputStream(InputStream inputStream) throws IOException {
