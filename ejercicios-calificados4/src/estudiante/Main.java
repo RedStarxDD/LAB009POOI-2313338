@@ -43,7 +43,7 @@ public class Main {
     			estudiantes.eliminar();
     			break;
     		case 4:
-    			
+    			estudiantes.modificar();
     			break;
     		case 5:
     			estudiantes.modificarMinusculas();
