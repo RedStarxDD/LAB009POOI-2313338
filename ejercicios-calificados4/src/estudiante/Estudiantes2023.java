@@ -128,7 +128,7 @@ public class Estudiantes2023 {
     		System.out.println(estudiante);
  	   	}
      }
-	public void modificar() {   	 
+     public void modificar() {   	 
    	 Scanner scanner = new Scanner(System.in);
    	 
    	 System.out.print("Ingrese el código del estudiante a modificar: ");
@@ -158,6 +158,7 @@ public class Estudiantes2023 {
     	  }
  	    listarEstudiantes();
      }
+	
     public void modificarMinusculas() {
     	for (Estudiante estudiante : estudiantes) {
 			if(estudiante.getNombre().substring(0,1).equals(estudiante.getNombre().substring(0,1).toLowerCase())){
