@@ -3,3 +3,4 @@ Integrantes:
 Dante Uchofen Morales
 Maurizio Caloggero La Torre
 Valentina Milagros Julca Yale
+Lileth Shantall Fernandez Perez
