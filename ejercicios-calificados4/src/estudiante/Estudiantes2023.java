@@ -128,62 +128,35 @@ public class Estudiantes2023 {
     		System.out.println(estudiante);
  	   	}
      }
-	
-     public void modificar() {
-    	 
-    	 Scanner scanner = new Scanner(System.in);
-    	 
-    	 System.out.print("Ingrese el código del estudiante a modificar:");
-    	 int codigoModificar = scanner.nextInt();
-     	  
-     	  for (Estudiante estudiante : estudiantes) {
+	public void modificar() {   	 
+   	 Scanner scanner = new Scanner(System.in);
+   	 
+   	 System.out.print("Ingrese el código del estudiante a modificar: ");
+   	 int codigoModificar = scanner.nextInt();
+    	  
+    	  for (Estudiante estudiante : estudiantes) {
 				if(estudiante.getCodigo()==codigoModificar){
-					System.out.println("Se ha encontrado: código"+ estudiante.getCodigo());
-					break;
-				}
-     	  }
-    	System.out.print("Ingrese el nuevo nombre del estudiante: ");
-    	scanner.nextLine();
-    	String codigoModificar1 = scanner.nextLine();
-    	 for (Estudiante estudiante1: estudiantes) {
-    		 
-				if(estudiante1.getNombre()==codigoModificar1) {
-					System.out.println("Se ha encontrado: Nombre"+ estudiante1.getNombre());
-					break;
-				}
-    	 }
-    	
-    	System.out.print("Ingrese el nuevo apellido del estudiante: ");
-    	String codigoModificar2 = scanner.nextLine();
-    	
-    	 for (Estudiante estudiante2 : estudiantes) {
-				if(estudiante2.getApellido()==codigoModificar2) {
-					System.out.println("Se ha encontrado: Apellido"+ estudiante2.getApellido());
-					break;
-				}
-    	 }
-   
-      	System.out.print("Ingrese el nuevo ciclo: ");
-      		int codigoModificar3 = scanner.nextInt();
-      	 for (Estudiante estudiante3: estudiantes) {
-  				if(estudiante3.getCiclo()==codigoModificar3) {
-  					System.out.println("Se ha encontrado: Ciclo"+ estudiante3.getCiclo());
-  					break;
-  				}
-  	    listarEstudiantes();
-      	 }
-      	 
-      	
-      	System.out.print("Ingrese la nueva pension: ");
-      	int codigoModificar4 = scanner.nextInt();
-      	 for (Estudiante estudiante4 : estudiantes) {
+					scanner.nextLine();
+					System.out.println("Ingrese nombre del estudiante: ");
+			    	String nombre = scanner.nextLine();
+			    	
+			    	System.out.println("Ingrese apellido del estudiante: ");
+			    	String apellido = scanner.nextLine();
+			    	
+			    	System.out.println("Ingrese ciclo del estudiante: ");
+			    	int ciclo = scanner.nextInt();
+			    	
+			    	System.out.println("Ingrese pension del estudiante: ");
+			    	double pension = scanner.nextDouble();
 
-				if(estudiante4.getPension()==codigoModificar4) {
-  					System.out.println("Se ha encontrado: Pension"+ estudiante4.getPension());
-  					break;
+					estudiante.setNombre(nombre+" "+apellido);
+					estudiante.setCiclo(ciclo);
+					estudiante.setPension(pension);
+					
+					System.out.println("¡Se modificó con éxito!");
 				}
-      	 }
-     	  
+    	  }
+ 	    listarEstudiantes();
      }
     public void modificarMinusculas() {
     	for (Estudiante estudiante : estudiantes) {
